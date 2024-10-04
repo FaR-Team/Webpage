@@ -308,41 +308,66 @@
             width: 80%;
             max-width: 500px;
         }
+          .close-btn {
+              color: #aaa;
+              float: right;
+              font-size: 28px;
+              font-weight: bold;
+              cursor: pointer;
+          }
 
-        .close-btn {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer;
-        }
+          .close-btn:hover,
+          .close-btn:focus {
+              color: #000;
+              text-decoration: none;
+              cursor: pointer;
+          }
 
-        .close-btn:hover,
-        .close-btn:focus {
-            color: #000;
-            text-decoration: none;
-            cursor: pointer;
-        }
+          #contact-form {
+              display: flex;
+              flex-direction: column;
+          }
 
-        #contact-form {
-            display: flex;
-            flex-direction: column;
-        }
+          #contact-form input,
+          #contact-form textarea {
+              margin-bottom: 10px;
+              padding: 10px;
+          }
 
-        #contact-form input,
-        #contact-form textarea {
-            margin-bottom: 10px;
-            padding: 10px;
-        }
+          #contact-form button {
+              background-color: #e8491d;
+              color: white;
+              border: none;
+              padding: 10px;
+              cursor: pointer;
+          }
 
-        #contact-form button {
-            background-color: #e8491d;
-            color: white;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-        }
-    </style>
+          .nav-menu {
+              transition: all 0.3s ease-in-out;
+          }
+
+          @media (max-width: 768px) {
+              .nav-menu {
+                  display: none;
+                  flex-direction: column;
+                  position: absolute;
+                  top: 60px;
+                  left: 0;
+                  width: 100%;
+                  background-color: #35424a;
+                  padding: 20px 0;
+                  transform: translateY(-100%);
+                  opacity: 0;
+                  pointer-events: none;
+              }
+              .nav-menu.active {
+                  display: flex;
+                  transform: translateY(0);
+                  opacity: 1;
+                  pointer-events: auto;
+              }
+          }
+      </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     </head>
 <body>
