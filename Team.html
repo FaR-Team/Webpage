@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FaR Team - Team</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #35424a;
+            color: #ffffff;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            height: 40px;
+        }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        .hamburger span {
+            height: 3px;
+            width: 25px;
+            background-color: #ffffff;
+            margin: 2px 0;
+        }
+        .nav-menu {
+            display: flex;
+            list-style-type: none;
+        }
+        .nav-menu li {
+            margin-left: 20px;
+        }
+        .nav-menu a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+            .nav-menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background-color: #35424a;
+                padding: 20px 0;
+            }
+            .nav-menu.active {
+                display: flex;
+            }
+            .nav-menu li {
+                margin: 10px 0;
+            }
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+        .team-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+        }
+        .team-member {
+            text-align: center;
+            width: calc(50% - 20px);
+            max-width: 300px;
+        }
+        .team-member:last-child {
+            width: 100%;
+            max-width: 300px;
+        }
+        .team-member img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .team-member h2 {
+            color: #35424a;
+            margin: 0 0 5px;
+            font-size: 1.5rem;
+        }
+        .team-member p {
+            margin: 0 0 10px;
+            color: #666;
+        }
+        .team-member .position {
+            font-weight: bold;
+            color: #35424a;
+        }
+        .team-member a {
+            cursor: pointer;
+        }
+        .team-member img:hover {
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="Images/FaRLogo.jpg" alt="FaR Team Logo" class="logo">
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="Team.html">Team</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+    <div class="container">
+        <div class="team-grid">
+            <div class="team-member">
+            <a href="https://linktr.ee/sai_it_again" target="_blank">
+                <img src="https://via.placeholder.com/200" alt="Sasha Englebert">
+                </a>
+                <h2>Sasha Englebert</h2>
+                <p class="position">Lead Developer</p>
+                <p>Sasha is a visionary leader, he got into the industry via the weirdest mean imaginable: Just felt like it.</p>
+            </div>
+            <div class="team-member">
+                <a href="https://justneki.com/" target="_blank">
+                    <img src="Images/Santiago.jpeg" alt="Santiago Fisela">
+                </a>
+                <h2>Santiago Fisela</h2>
+                <p class="position">Lead Programmer</p>
+                <p>Idk, bio</p>
+            </div>
+            <div class="team-member">
+                <a href="https://www.linkedin.com/in/alvarenga-ulises/" target="_blank">
+                    <img src="Images/Ulises.jpeg" alt="Ulysses Alvarenga">
+                </a>
+                <h2>Ulysses Alvarenga</h2>
+                <p class="position">Programmer/Developer</p>
+                <p>Idk bio.</p>
+            </div>
+            <div class="team-member">
+                <a href="https://www.linkedin.com/in/franco-rosatti" target="_blank">
+                    <img src="Images/Franco.jpeg" alt="Franco Rosatti">
+                </a>
+                <h2>Franco Rosatti</h2>
+                <p class="position">Programmer</p>
+                <p>Idk bio.</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
