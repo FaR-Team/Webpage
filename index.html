@@ -24,7 +24,7 @@
             height: 40px;
         }
         .hamburger {
-            display: flex;
+            display: none;
             flex-direction: column;
             cursor: pointer;
             transition: all 0.3s ease-in-out;
@@ -143,7 +143,8 @@
             .social-icons {
                 justify-content: center;
             }
-        }        @media (max-width: 768px) {
+        }
+        @media (max-width: 768px) {
             .hamburger {
                 display: flex;
             }
@@ -156,15 +157,9 @@
                 width: 100%;
                 background-color: #35424a;
                 padding: 20px 0;
-                transform: translateY(-100%);
-                opacity: 0;
-                pointer-events: none;
             }
             .nav-menu.active {
                 display: flex;
-                transform: translateY(0);
-                opacity: 1;
-                pointer-events: auto;
             }
             .nav-menu li {
                 margin: 10px 0;
@@ -458,8 +453,6 @@
                 hamburger.classList.remove('active');
             }
         });
-
-        const navLinks = document.querySelectorAll('.nav-menu a');
 
         navLinks.forEach(link => {
             link.addEventListener('click', (e) => {
