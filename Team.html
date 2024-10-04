@@ -34,9 +34,28 @@
             background-color: #ffffff;
             margin: 2px 0;
         }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+        .hamburger span {
+            transition: all 0.3s ease-in-out;
+        }
         .nav-menu {
             display: flex;
             list-style-type: none;
+            transition: all 0.3s ease-in-out;
         }
         .nav-menu li {
             margin-left: 20px;
@@ -58,9 +77,15 @@
                 width: 100%;
                 background-color: #35424a;
                 padding: 20px 0;
+                transform: translateY(-100%);
+                opacity: 0;
+                pointer-events: none;
             }
             .nav-menu.active {
                 display: flex;
+                transform: translateY(0);
+                opacity: 1;
+                pointer-events: auto;
             }
             .nav-menu li {
                 margin: 10px 0;
@@ -176,6 +201,14 @@
 
         hamburger.addEventListener('click', () => {
             navMenu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+                navMenu.classList.remove('active');
+                hamburger.classList.remove('active');
+            }
         });
     </script>
 </body>
